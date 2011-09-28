@@ -604,7 +604,7 @@ public class WebConsole {
             writeData("  "); 
             writeData("    "); 
             writeData( 
-                "    <h1><a href=\"http://www.primrose.org.uk\"><img style=\"border:0\" src=\"http://www.primrose.org.uk/images/primrose_logo.jpg\" alt=\"Primrose Logo\" />&lt;/a>&lt;/h1>"); 
+                "    <h1><a href=\"http://www.primrose.org.uk\"><img style=\"border:0\"  alt=\"Primrose Logo\" />&lt;/a>&lt;/h1>"); 
  
             writeData("  </div>"); 
             writeData("</div>  "); 
