@@ -41,7 +41,7 @@ public class PoolConnection implements Connection {
      */ 
     private void checkAndCloseResultSets() { 
         // Check the resultsets are all closed 
-        if (connHolder.resultsetObjects.size() > 0) { 
+        if (connHolder.resultsetObjects!=null && connHolder.resultsetObjects.size() > 0) { 
             try { 
                 throw new Exception(); 
             } catch (Exception e) { 
@@ -82,7 +82,7 @@ public class PoolConnection implements Connection {
      */ 
     private void checkAndCloseStatements() { 
         // Check the statements are all closed 
-        if (connHolder.statementObjects.size() > 0) { 
+        if (connHolder.statementObjects!=null && connHolder.statementObjects.size() > 0) { 
             try { 
                 throw new Exception(); 
             } catch (Exception e) { 
