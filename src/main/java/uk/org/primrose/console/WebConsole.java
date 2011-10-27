@@ -318,7 +318,7 @@ public class WebConsole {
                         "<tr><td colspan=\"2\"><input type=\"hidden\" value=\"" + 
                         poolName + "\"/></td></tr>"); 
                     writeData( 
-                        "<tr><td colspan=\"2\"><input type=\"submit\" value=\"Update Pool Now\"/>&lt;/td>&lt;/tr>"); 
+                        "<tr><td colspan=\"2\"><input type=\"submit\" value=\"Update Pool Now\"/></td></tr>"); 
  
                     writeData("</table></form>"); 
                     writeData( 
@@ -375,7 +375,7 @@ public class WebConsole {
                 writeHeaders("text/html", "", 200, 0); 
                 writeTop(refreshRate); 
  
-                writeData("<table><tr><td>&lt;table>&lt;tr>&lt;td>Server date : " + 
+                writeData("<table><tr><td><table><tr><td>Server date : " + 
                     new java.util.Date() + "</td></tr>"); 
                 writeData("<tr><td>Primrose Version : " + Constants.VERSION + 
                     "</td></tr>"); 
@@ -395,30 +395,30 @@ public class WebConsole {
                         pool.getTotalConnectionsHandedOut() + "</td></tr>"); 
                     writeData("<tr><td><a href=\"/showPoolConfig?poolName=" + 
                         poolName + 
-                        "\">Edit runtime config properties</a></td></tr>&lt;/table>&lt;/td>&lt;td>&nbsp;&lt;/td>"); 
+                        "\">Edit runtime config properties</a></td></tr></table></td><td>&nbsp;</td>"); 
  
                     writeData( 
-                        "<td><table><tr>&lt;td>&lt;a href=\"/poolStop?poolName=" + 
+                        "<td><table><tr><td><a href=\"/poolStop?poolName=" + 
                         poolName + "\">Stop Pool</a></td></tr>"); 
                     writeData("<tr><td><a href=\"/poolStart?poolName=" + 
                         poolName + "\">Start Pool</a></td></tr>"); 
                     writeData("<tr><td><a href=\"/poolRestart?poolName=" + 
                         poolName + 
-                        "\">Restart Pool</a></td></tr>&lt;/table>&lt;/td>&lt;/tr>&lt;/table>"); 
+                        "\">Restart Pool</a></td></tr></table></td></tr></table>"); 
  
                     writeData("<p/><h5>Connection Data</h5>"); 
  
                     Vector<ConnectionHolder> connections = pool.getPoolConnections(); 
                     writeData("<table border=\"1\">"); 
-                    writeData("<tr><td><h5>ID&lt;/h5>&lt;/td>" + 
-                        "<td><h5>Status</h5>&lt;/td>" + "&lt;td>&lt;h5>Opens&lt;/h5>&lt;/td>" + 
-                        "<td><h5>Closes</h5>&lt;/td>" + 
-                        "<td><h5>CallableStatement</h5>&lt;/td>" + 
-                        "<td><h5>PreparedStatement</h5>&lt;/td>" + 
-                        "<td><h5>Statement</h5>&lt;/td>" + 
-                        "<td><h5>Active For</h5>&lt;/td>" + 
-                        "<td><h5>Idle For</h5>&lt;/td>" + 
-                        "<td><h5>SQL</h5>&lt;/td>&lt;/tr>"); 
+                    writeData("<tr><td><h5>ID</h5></td>" + 
+                        "<td><h5>Status</h5></td>" + "<td><h5>Opens</h5></td>" + 
+                        "<td><h5>Closes</h5></td>" + 
+                        "<td><h5>CallableStatement</h5></td>" + 
+                        "<td><h5>PreparedStatement</h5></td>" + 
+                        "<td><h5>Statement</h5></td>" + 
+                        "<td><h5>Active For</h5></td>" + 
+                        "<td><h5>Idle For</h5></td>" + 
+                        "<td><h5>SQL</h5></td></tr>"); 
  
                     for (ConnectionHolder ch : connections) { 
                         String status = PoolData.getStringStatus(Pool.UNKNOWN_STATUS_CODE); 
@@ -443,14 +443,14 @@ public class WebConsole {
                         } 
  
                         writeData("<tr><td>" + ch.conn.hashCode() + 
-                            "</td><td>" + status + "</td>" + "&lt;td>" + 
+                            "</td><td>" + status + "</td>" + "<td>" + 
                             ch.numberOfOpens + "</td>" + "<td>" + 
                             ch.numberOfCloses + "</td>" + "<td>" + 
                             ch.numberOfJDBCCallableStatementsRun + "</td>" + 
                             "<td>" + ch.numberOfJDBCPreparedStatementsRun + 
                             "</td>" + "<td>" + ch.numberOfJDBCStatementsRun + 
-                            "</td>" + "<td>" + inusefor + "</td>" + "&lt;td>" + 
-                            idlefor + "</td>" + "<td>" + ch.sql + "</td>&lt;/tr>"); 
+                            "</td>" + "<td>" + inusefor + "</td>" + "<td>" + 
+                            idlefor + "</td>" + "<td>" + ch.sql + "</td></tr>"); 
                     } 
  
                     writeData("</table>"); 
@@ -472,7 +472,7 @@ public class WebConsole {
                 } 
  
                 writeData( 
-                    "<p><form method=\"get\"><input type=\"text\" name=\"refresh\"/>&lt;input type=\"hidden\" name=\"poolName\" value=\"" + 
+                    "<p><form method=\"get\"><input type=\"text\" name=\"refresh\"/><input type=\"hidden\" name=\"poolName\" value=\"" + 
                     poolName + 
                     "\"/>&nbsp;<input type=\"submit\" value=\"Set Page Refresh Rate (seconds)\"/></form>"); 
  
@@ -604,7 +604,7 @@ public class WebConsole {
             writeData("  "); 
             writeData("    "); 
             writeData( 
-                "    <h1><a href=\"http://www.primrose.org.uk\"><img style=\"border:0\"  alt=\"Primrose Logo\" />&lt;/a>&lt;/h1>"); 
+                "    <h1><a href=\"http://www.primrose.org.uk\"></a></h1>"); 
  
             writeData("  </div>"); 
             writeData("</div>  "); 
@@ -636,7 +636,7 @@ public class WebConsole {
  
             writeData("						<div id=\"leftColumn\">"); 
             writeData("							<div class=\"inside\">"); 
-            writeData("<div class=\"vnav\"><p>&nbsp;</p>&lt;/div>"); 
+            writeData("<div class=\"vnav\"><p>&nbsp;</p></div>"); 
             writeData("<div class=\"vnav\">"); 
  
             writeData("	<h3>&nbsp;</h3>"); 
@@ -700,8 +700,6 @@ public class WebConsole {
             writeData("    	"); 
             writeData( 
                 "		 <a href=\"http://www.primrose.org.uk\"><img style=\"border:0;\""); 
-            writeData( 
-                "			src=\"http://www.primrose.org.uk/images/primrose_powered_by_centre_small.jpg\""); 
             writeData("			alt=\"Powered By Primrose\"/></a>	        	"); 
             writeData("	</p>	"); 
  
