@@ -1,0 +1,1 @@
+Primrose is a database pooling mechanism, originally developed by Ben Keeping. This is an attempt to keep the project alive and bug free.
